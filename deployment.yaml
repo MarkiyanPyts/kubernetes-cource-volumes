@@ -14,4 +14,10 @@ spec:
     spec:
       containers:
         - name: story-container
-          image: docker.io/pytsmarkiyan/kub-data-demo
+          image: docker.io/pytsmarkiyan/kub-data-demo:1
+          volumeMounts:
+            - mountPath: /app/story
+              name: story-volume
+      volumes:
+        - name: story-volume
+          emptyDir: {}

@@ -32,4 +32,8 @@ app.post('/story', (req, res) => {
   });
 });
 
+app.get('/error', () => { // Crash the container to force the restart
+  process.exit(1);
+})
+
 app.listen(3000);
